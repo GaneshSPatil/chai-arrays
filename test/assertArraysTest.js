@@ -143,4 +143,52 @@ describe('Assert Arrays', () => {
 
   });
 
+  describe('equalTo', () => {
+
+    it('should assert actual is equalTo expected', () => {
+      expect([1, 2, 3]).to.be.equalTo([1, 2, 3]);
+      expect(['foo', 'bar', 'foobar']).to.be.equalTo(['foo', 'bar', 'foobar']);
+    });
+
+    it('should assert actual is not equal to expected', () => {
+      expect([1, 2, 3]).not.to.be.equalTo([1, 4, 3]);
+      expect(['foo', 'bar', 'foobar']).not.to.be.equalTo(['foo', 'baz', 'foobar']);
+    });
+
+    it('should assert actual is equal to expected for complex arrays', () => {
+      const element1 = {'foo': [{'a': 1}]};
+      const element2 = {'foo': [{'a': 2}]};
+      const element3 = {'foo': [{'a': 3}]};
+
+      const actual = [element1, element2, element3];
+      const expected = [element1, element2, element3];
+
+      expect(actual).to.be.equalTo(expected);
+    });
+
+    it('should assert actual is equal to expected for complex arrays', () => {
+      const element1 = {'foo': [{'a': 1}]};
+      const element2 = {'foo': [{'a': 2}]};
+      const element3 = {'foo': [{'a': 3}]};
+
+      const actual = [element1, element2, element3];
+      const expected = [element1, element3, element2];
+
+      expect(actual).not.to.be.equalTo(expected);
+    });
+
+    it('should throw proper error when actual is not equal to expected', () => {
+      expect(() => {
+        expect([1, 2, 3]).to.be.equalTo([1, 2, 4]);
+      }).throws('expected [ 1, 2, 3 ] to be equal to [1,2,4]');
+    });
+
+    it('should throw proper error when actual is equal to expected', () => {
+      expect(() => {
+        expect([1, 2, 3]).not.to.be.equalTo([1, 2, 3]);
+      }).throws('expected [ 1, 2, 3 ] not to be equal to [1,2,3]');
+    });
+
+  });
+
 });
