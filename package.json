@@ -1,0 +1,24 @@
+{
+  "name": "chai-arrays",
+  "version": "0.0.1",
+  "description": "a simple chai plugin for better array assertions",
+  "main": "assertArrays.js",
+  "scripts": {
+    "test": "./node_modules/.bin/eslint assertArrays.js test && ./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaneshSPatil/chai-arrays.git"
+  },
+  "author": "Ganesh Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GaneshSPatil/chai-arrays/issues"
+  },
+  "homepage": "https://github.com/GaneshSPatil/chai-arrays#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.10.2",
+    "mocha": "^3.1.2"
+  }
+}
