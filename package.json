@@ -10,10 +10,22 @@
     "type": "git",
     "url": "git+https://github.com/GaneshSPatil/chai-arrays.git"
   },
+  "keywords": [
+    "chai",
+    "chai-plugin",
+    "testing",
+    "assert",
+    "expect",
+    "Array"
+  ],
   "author": "Ganesh Patil",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GaneshSPatil/chai-arrays/issues"
+  },
+  "homepage": "https://github.com/GaneshSPatil/chai-arrays#README.md",
+  "engines": {
+    "node": ">=0.10"
   },
   "homepage": "https://github.com/GaneshSPatil/chai-arrays#readme",
   "devDependencies": {
