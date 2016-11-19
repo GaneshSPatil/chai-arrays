@@ -14,6 +14,10 @@ const compare = function(actual, expected) {
   return actual.every((value, index) => value === expected[index]);
 };
 
+const isSorted = function(array, fn) {
+  return compare(array, array.slice().sort(fn));
+};
+
 module.exports = (chai) => {
 
   chai.Assertion.addMethod('containing', function(value) {
@@ -61,6 +65,14 @@ module.exports = (chai) => {
       this._obj instanceof Array,
       'expected #{this} to be an Array',
       'expected #{this} not to be an Array'
+    );
+  });
+
+  chai.Assertion.addMethod('sorted', function(sortfn) {
+    this.assert(
+      isSorted(this._obj, sortfn),
+      'expected #{this} to be sorted',
+      'expected #{this} not to be sorted'
     );
   });
 

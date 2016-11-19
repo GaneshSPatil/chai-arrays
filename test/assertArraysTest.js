@@ -238,4 +238,43 @@ describe('Assert Arrays', () => {
     });
   });
 
+  describe('sorted', () => {
+
+    it('should assert that the array is sorted', () => {
+      expect([1, 2, 3]).to.be.sorted();
+    });
+
+    it('should assert that the array is not sorted', () => {
+      expect([1, 5, 2, 3]).not.to.be.sorted();
+    });
+
+    it('should assert that the array is sorted based on the method provided', () => {
+      const by = function(prev, next) {
+        return prev < next;
+      };
+
+      expect([3, 2, 1]).to.be.sorted(by);
+    });
+
+    it('should assert that the array is not sorted based on the method provided', () => {
+      const by = function(prev, next) {
+        return prev < next;
+      };
+
+      expect([1, 2, 3]).not.to.be.sorted(by);
+    });
+
+    it('should throw proper error when array is not sorted', () => {
+      expect(() => {
+        expect([1, 2, 4, 3]).to.be.sorted();
+      }).throws('expected [ 1, 2, 4, 3 ] to be sorted');
+    });
+
+    it('should throw proper error when array is sorted', () => {
+      expect(() => {
+        expect([1, 2, 3]).not.to.be.sorted();
+      }).throws('expected [ 1, 2, 3 ] not to be sorted');
+    });
+  });
+
 });
