@@ -6,6 +6,10 @@ const doesContainAll = function(array, values) {
   return values.every((element) => doesContain(array, element));
 };
 
+const doesContainAny = function(array, values) {
+  return values.some((element) => doesContain(array, element));
+};
+
 module.exports = (chai) => {
 
   chai.Assertion.addMethod('containing', function(value) {
@@ -21,6 +25,14 @@ module.exports = (chai) => {
       doesContainAll(this._obj, values),
       `expected #{this} to be containing all of [${values}]`,
       `expected #{this} not to be containing all of [${values}]`
+    );
+  });
+
+  chai.Assertion.addMethod('containingAnyOf', function(values) {
+    this.assert(
+      doesContainAny(this._obj, values),
+      `expected #{this} to be containing any of [${values}]`,
+      `expected #{this} not to be containing any of [${values}]`
     );
   });
 
