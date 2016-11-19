@@ -191,4 +191,29 @@ describe('Assert Arrays', () => {
 
   });
 
+  describe('ofSize', () => {
+
+    it('should assert the size of array', () => {
+      expect([1, 2, 3]).to.be.ofSize(3);
+    });
+
+    it('should not assert the size of array', () => {
+      expect([1, 2, 3]).not.to.be.ofSize(5);
+    });
+
+    it('should throw proper error when actual size is not equal to expected', () => {
+      expect(() => {
+        expect([1, 2, 3]).to.be.ofSize(5);
+      }).throws('expected [ 1, 2, 3 ] to be of size 5');
+    });
+
+    it('should throw proper error when actual size is equal to expected', () => {
+      expect(() => {
+        expect([1, 2, 3]).not.to.be.ofSize(3);
+      }).throws('expected [ 1, 2, 3 ] not to be of size 3');
+    });
+
+  });
+
+
 });

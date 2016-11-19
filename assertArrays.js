@@ -48,4 +48,12 @@ module.exports = (chai) => {
     );
   });
 
+  chai.Assertion.addMethod('ofSize', function(length) {
+    this.assert(
+      this._obj.length === length,
+      `expected #{this} to be of size ${length}`,
+      `expected #{this} not to be of size ${length}`
+    );
+  });
+
 };
