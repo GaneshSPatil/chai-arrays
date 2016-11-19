@@ -56,4 +56,12 @@ module.exports = (chai) => {
     );
   });
 
+  chai.Assertion.addMethod('array', function() {
+    this.assert(
+      this._obj instanceof Array,
+      'expected #{this} to be an Array',
+      'expected #{this} not to be an Array'
+    );
+  });
+
 };

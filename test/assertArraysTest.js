@@ -215,5 +215,27 @@ describe('Assert Arrays', () => {
 
   });
 
+  describe('isArray', () => {
+
+    it('should assert the type is array', () => {
+      expect([1, 2, 3]).to.be.array();
+    });
+
+    it('should assert the type is not array', () => {
+      expect('foo').not.to.be.array();
+    });
+
+    it('should throw proper error when actual is not an array', () => {
+      expect(() => {
+        expect(1).to.be.array();
+      }).throws('expected 1 to be an Array');
+    });
+
+    it('should throw proper error when actual is an array', () => {
+      expect(() => {
+        expect([1]).not.to.be.array();
+      }).throws('expected [ 1 ] not to be an Array');
+    });
+  });
 
 });
