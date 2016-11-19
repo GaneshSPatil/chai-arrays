@@ -17,11 +17,59 @@ describe('Assert Arrays', () => {
     });
 
     it('should assert presence of a value in a array of complex objects', () => {
-      const actual = [{'foo': [{'a': 2}]}, {'foo': [{'a': 1}]}, {'foo': [{'b': 1}]}];
-      const element = {'foo': [{'a': 1}]};
+      const element1 = {'foo': [{'a': 1}]};
+      const element2 = {'foo': [{'a': 2}]};
 
-      expect(actual).not.to.be.containing(element);
+      const actual = [element1, element2];
+
+      expect(actual).to.be.containing(element2);
+    });
+
+    it('should assert absence of a value in a array of complex objects', () => {
+      const element1 = {'foo': [{'a': 1}]};
+      const element2 = {'foo': [{'a': 2}]};
+      const element3 = {'foo': [{'a': 3}]};
+
+      const actual = [element1, element3];
+
+      expect(actual).not.to.be.containing(element2);
     });
 
   });
+
+  describe('containingAllOf', () => {
+
+    it('should assert presence of all values in array', () => {
+      expect([1, 2, 3]).to.be.containingAllOf([1]);
+      expect([1, 2, 3]).to.be.containingAllOf([1, 3]);
+      expect([1, 2, 3]).to.be.containingAllOf([1, 2, 3]);
+    });
+
+    it('should assert absence of all values in array', () => {
+      expect([1, 2, 3]).not.to.be.containingAllOf([4]);
+      expect([1, 2, 3]).not.to.be.containingAllOf([1, 4]);
+    });
+
+    it('should assert presence of all values in a array of complex objects', () => {
+      const element1 = {'foo': [{'a': 1}]};
+      const element2 = {'foo': [{'a': 2}]};
+      const element3 = {'foo': [{'a': 3}]};
+
+      const actual = [element1, element2, element3];
+
+      expect(actual).to.be.containingAllOf([element1, element3]);
+    });
+
+    it('should assert absence of all values in a array of complex objects', () => {
+      const element1 = {'foo': [{'a': 1}]};
+      const element2 = {'foo': [{'a': 2}]};
+      const element3 = {'foo': [{'a': 3}]};
+
+      const actual = [element1, element3];
+
+      expect(actual).not.to.be.containingAllOf([element1, element2]);
+    });
+
+  });
+
 });
