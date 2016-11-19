@@ -35,6 +35,18 @@ describe('Assert Arrays', () => {
       expect(actual).not.to.be.containing(element2);
     });
 
+    it('should throw proper error when array does not contain the expected element', () => {
+      expect(() => {
+        expect([1, 2, 3]).to.be.containing(4);
+      }).throws('expected [ 1, 2, 3 ] to be containing 4');
+    });
+
+    it('should throw proper error when array does contain the expected element', () => {
+      expect(() => {
+        expect([1, 2, 3]).not.to.be.containing(2);
+      }).throws('expected [ 1, 2, 3 ] not to be containing 2');
+    });
+
   });
 
   describe('containingAllOf', () => {
@@ -68,6 +80,18 @@ describe('Assert Arrays', () => {
       const actual = [element1, element3];
 
       expect(actual).not.to.be.containingAllOf([element1, element2]);
+    });
+
+    it('should throw proper error when array does not contain the expected elements', () => {
+      expect(() => {
+        expect([1, 2, 3]).to.be.containingAllOf([1, 4]);
+      }).throws('expected [ 1, 2, 3 ] to be containing all of [1,4]');
+    });
+
+    it('should throw proper error when array does contain the expected elements', () => {
+      expect(() => {
+        expect([1, 2, 3]).not.to.be.containingAllOf([1]);
+      }).throws('expected [ 1, 2, 3 ] not to be containing all of [1]');
     });
 
   });

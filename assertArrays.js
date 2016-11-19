@@ -19,8 +19,8 @@ module.exports = (chai) => {
   chai.Assertion.addMethod('containingAllOf', function(values) {
     this.assert(
       doesContainAll(this._obj, values),
-      `expected #{this} to be containing all of [${values.join(', ')}]`,
-      `expected #{this} not to be containing all of[${values.join(', ')}]`
+      `expected #{this} to be containing all of [${values}]`,
+      `expected #{this} not to be containing all of [${values}]`
     );
   });
 
