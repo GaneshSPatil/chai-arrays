@@ -4,7 +4,7 @@
   "description": "a simple chai plugin for better array assertions",
   "main": "assertArrays.js",
   "scripts": {
-    "test": "./node_modules/.bin/eslint assertArrays.js test && ./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/.bin/eslint assertArrays.js test && ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --recursive"
   },
   "repository": {
     "type": "git",
@@ -23,14 +23,14 @@
   "bugs": {
     "url": "https://github.com/GaneshSPatil/chai-arrays/issues"
   },
-  "homepage": "https://github.com/GaneshSPatil/chai-arrays#README.md",
+  "homepage": "https://github.com/GaneshSPatil/chai-arrays#readme",
   "engines": {
     "node": ">=0.10"
   },
-  "homepage": "https://github.com/GaneshSPatil/chai-arrays#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.10.2",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2"
   }
 }
