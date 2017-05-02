@@ -1,4 +1,4 @@
-# chai-arrays
+# chai-arrays  [![CircleCI](https://circleci.com/gh/GaneshSPatil/chai-arrays.svg?style=shield)](https://circleci.com/gh/GaneshSPatil/chai-arrays)
 a simple chai plugin for better array assertions
 
 ---
