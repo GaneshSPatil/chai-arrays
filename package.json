@@ -1,6 +1,6 @@
 {
   "name": "chai-arrays",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a simple chai plugin for better array assertions",
   "main": "assertArrays.js",
   "scripts": {
