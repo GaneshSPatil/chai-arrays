@@ -150,6 +150,10 @@ describe('Assert Arrays', () => {
       expect(['foo', 'bar', 'foobar']).to.be.equalTo(['foo', 'bar', 'foobar']);
     });
 
+    it('should assert actual is not equal to expected for unequal length arrays', () => {
+      expect([1]).not.to.be.equalTo([1, 2, 3]);
+    });
+
     it('should assert actual is not equal to expected', () => {
       expect([1, 2, 3]).not.to.be.equalTo([1, 4, 3]);
       expect(['foo', 'bar', 'foobar']).not.to.be.equalTo(['foo', 'baz', 'foobar']);
