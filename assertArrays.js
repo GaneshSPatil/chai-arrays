@@ -11,7 +11,7 @@ const doesContainAny = function(array, values) {
 };
 
 const compare = function(actual, expected) {
-  return actual.every((value, index) => value === expected[index]);
+  return actual.length === expected.length && actual.every((value, index) => value === expected[index]);
 };
 
 const isSorted = function(array, fn) {
