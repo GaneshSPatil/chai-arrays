@@ -29,6 +29,7 @@ expect([1, 2, 3]).to.be.array();
 expect('foobar').not.to.be.array();
 
 expect(new Uint8Array([1])).to.be.Uint8Array();
+expect(new Uint16Array([1])).to.be.Uint16Array();
 ```
 
 ### ofSize
