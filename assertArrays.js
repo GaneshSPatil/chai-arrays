@@ -68,6 +68,14 @@ module.exports = (chai) => {
     );
   });
 
+  chai.Assertion.addMethod('Uint8Array', function() {
+    this.assert(
+      this._obj instanceof Uint8Array,
+      'expected #{this} to be an Uint8Array',
+      'expected #{this} not to be an Uint8Array'
+    );
+  });
+
   chai.Assertion.addMethod('sorted', function(sortfn) {
     this.assert(
       isSorted(this._obj, sortfn),
