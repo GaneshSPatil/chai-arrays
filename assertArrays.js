@@ -92,6 +92,14 @@ module.exports = (chai) => {
     );
   });
 
+  chai.Assertion.addMethod('Uint8ClampedArray', function() {
+    this.assert(
+      this._obj instanceof Uint8ClampedArray,
+      'expected #{this} to be an Uint8ClampedArray',
+      'expected #{this} not to be an Uint8ClampedArray'
+    );
+  });
+
   chai.Assertion.addMethod('sorted', function(sortfn) {
     this.assert(
       isSorted(this._obj, sortfn),

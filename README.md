@@ -31,6 +31,7 @@ expect('foobar').not.to.be.array();
 expect(new Uint8Array([1])).to.be.Uint8Array();
 expect(new Uint16Array([1])).to.be.Uint16Array();
 expect(new Uint32Array([1])).to.be.Uint32Array();
+expect(new Uint8ClampedArray([1])).to.be.Uint8ClampedArray();
 ```
 
 ### ofSize
