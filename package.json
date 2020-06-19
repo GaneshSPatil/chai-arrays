@@ -1,6 +1,6 @@
 {
   "name": "chai-arrays",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "a simple chai plugin for better array assertions",
   "main": "assertArrays.js",
   "scripts": {
@@ -31,6 +31,6 @@
     "chai": "^3.5.0",
     "eslint": "^3.10.2",
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.2"
+    "mocha": "^8.0.1"
   }
 }
