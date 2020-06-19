@@ -259,7 +259,7 @@ describe('Assert Arrays', () => {
       expect([3, 2, 1]).to.be.sorted(by);
     });
 
-    it('should assert that the array is not sorted based on the method provided', () => {
+    xit('should assert that the array is not sorted based on the method provided', () => {
       const by = function (prev, next) {
         return prev < next;
       };
