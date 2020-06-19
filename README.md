@@ -1,4 +1,4 @@
-# chai-arrays  ![Continuous Integration](https://github.com/GaneshSPatil/chai-arrays/workflows/Node.js%20CI/badge.svg)
+# chai-arrays  ![Continuous Integration](https://github.com/GaneshSPatil/chai-arrays/workflows/Continuous%20Integration/badge.svg)
 a simple chai plugin for better array assertions
 
 ---
