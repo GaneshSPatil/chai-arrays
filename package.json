@@ -28,8 +28,8 @@
     "node": ">=0.10"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.10.2",
+    "chai": "^4.2.0",
+    "eslint": "^7.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^8.0.1"
   }
